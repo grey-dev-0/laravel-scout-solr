@@ -1,0 +1,15 @@
+{
+    "name": "grey-dev-0/laravel-scout-solr",
+    "description": "Solr driver for Laravel Scout",
+    "keywords": ["solr", "laravel-scout", "scout"],
+    "license": "GPL-3.0",
+    "require": {
+        "laravel/scout": "~3.0|~2.0",
+        "solarium/solarium": "4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "GreyDev\\LaravelSolr\\": "src/"
+        }
+    }
+}
