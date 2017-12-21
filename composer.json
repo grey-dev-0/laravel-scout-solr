@@ -11,5 +11,16 @@
         "psr-4": {
             "GreyDev\\LaravelSolr\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GreyDev\\LaravelSolr\\SolrServiceProvider",
+                "GreyDev\\LaravelSolr\\ScoutServiceProvider"
+            ],
+            "aliases": {
+                "Solr": "GreyDev\\LaravelSolr\\SolrFacade"
+            }
+        }
     }
 }
