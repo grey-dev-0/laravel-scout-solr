@@ -115,14 +115,14 @@ class SolrEngine extends Engine{
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function map($results, $model){
-        $map = (method_exists($model, 'getScoutMap'))? $model->getScoutMap() : array_combine($keys = array_keys($model->toSearchableArray()), $keys);
+        $map = $model->getScoutMap();
         $models = [];
-        $queryBuilder = $model->newQuery();
+        $modelClass = get_class($model);
         foreach($results as $document){
             $attributes = [];
             foreach($document as $field => $value)
-                $attributes[$map[$field]] = $value;
-            $models[] = $queryBuilder->create($attributes);
+                $attributes[$map[$field]] = ($map[$field] != 'id')? $value : str_replace($model->getTable().'-', '', $value);
+            $models[] = new $modelClass($attributes);
         }
         return Collection::make($models);
     }
