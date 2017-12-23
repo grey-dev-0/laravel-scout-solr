@@ -115,7 +115,7 @@ class SolrEngine extends Engine{
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function map($results, $model){
-        $map = $model->getScoutMap();
+        $map = array_flip($model->getScoutMap());
         $models = [];
         $modelClass = get_class($model);
         foreach($results as $document){
