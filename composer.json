@@ -4,7 +4,7 @@
     "keywords": ["solr", "laravel-scout", "scout"],
     "license": "GPL-3.0",
     "require": {
-        "laravel/scout": "~3.0|~2.0",
+        "laravel/scout": "~4.0|~3.0|~2.0",
         "solarium/solarium": "4.0.0-beta-1"
     },
     "autoload": {
